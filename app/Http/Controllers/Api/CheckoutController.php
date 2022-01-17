@@ -59,6 +59,7 @@ class CheckoutController extends Controller
                 'address' => $this->request->address,
                 'grand_total' => $this->request->grand_total,
                 'status' => 'pending',
+                'product_message' => $this->request->product_message,
             ]);
 
             foreach (Cart::where('customer_id', auth()->guard('api')->user()->id)->get() as $cart) {
