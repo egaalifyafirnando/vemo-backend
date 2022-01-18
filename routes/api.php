@@ -49,3 +49,6 @@ Route::post('/notificationHandler', [CheckoutController::class, 'notificationHan
 
 // router API Slider
 Route::get('/sliders', [SliderController::class, 'index'])->name('customer.slider.index');
+
+// router search frontend
+Route::get('/search', [SearchController::class, 'index']);
