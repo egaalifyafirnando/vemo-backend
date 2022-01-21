@@ -52,7 +52,7 @@ class RajaOngkirController extends Controller
     public function checkOngkir(Request $request)
     {
         $cost = RajaOngkir::ongkosKirim([
-            'origin' => 409, // ID kota/kabupaten asal, 409 adalah kode kota sidoarjo
+            'origin' => 444, // ID kota/kabupaten asal, 409 adalah kode kota sidoarjo, kode 444 opsional
             'destination' => $request->city_destination, // ID kota/kabupaten tujuan
             'weight' => $request->weight, // berat barang dalam gram
             'courier' => $request->courier // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
