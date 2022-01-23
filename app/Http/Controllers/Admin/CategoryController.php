@@ -17,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::latest()->when(request()->q, function($categories) {
+        $categories = Category::latest()->when(request()->q, function ($categories) {
             $categories = $categories->where('nama', 'like', '%' . request()->q . '%');
         })->paginate(10);
 
@@ -127,7 +127,6 @@ class CategoryController extends Controller
                 'name' => $request->name,
                 'slug' => Str::slug($request->name, '-')
             ]);
-            
         }
 
         if ($category) {
@@ -137,7 +136,6 @@ class CategoryController extends Controller
             // redirext dengan pesan error
             return redirect()->route('admin.category.index')->with(['error' => 'Data Gagal Diupdate !']);
         }
-        
     }
 
     /**
@@ -149,10 +147,15 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrFail($id);
+
         $image = Storage::disk('local')->delete('public/categories/' . $category->image);
 
+        foreach ($category->products()->get() as $child) {
+            $child->delete();
+        }
+
         $category->delete();
-        
+
         if ($category) {
             return response()->json([
                 'status' => 'success'
