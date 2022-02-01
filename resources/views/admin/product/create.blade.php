@@ -68,8 +68,8 @@
                                 <label>DESKRIPSI</label>
                                 <textarea class="form-control content @error('content') is-invalid @enderror" name="content"
                                     rows="6" placeholder="Deskripsi Produk">
-                                                                                    {{ old('content') }}
-                                                                                </textarea>
+                                                                                                {{ old('content') }}
+                                                                                            </textarea>
                                 @error('content')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -117,9 +117,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary mr-1 btn-submit" type="submit"><i
-                                    class="fa fa-paper-plane"></i>SIMPAN</button>
-                            <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i>
+                            <button class="btn btn-green mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
+                                SIMPAN</button>
+                            <button class="btn btn-reset" type="reset"><i class="fa fa-redo"></i>
                                 RESET</button>
                         </form>
                     </div>

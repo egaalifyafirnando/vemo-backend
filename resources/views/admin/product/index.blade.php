@@ -46,8 +46,8 @@
                                             <td>{{ $product->category->name }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('admin.product.edit', $product->id) }}"
-                                                    class="btn btn-sm btn-primary"><i class="fa fa-pencil-alt"></i></a>
-                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-danger"
+                                                    class="btn btn-sm btn-green"><i class="fa fa-pencil-alt"></i></a>
+                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-hapus"
                                                     id="{{ $product->id }}"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>

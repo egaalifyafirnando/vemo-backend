@@ -50,10 +50,11 @@ class User extends Authenticatable
      */
     public function getAvatarUrlAttribute()
     {
-        if($this->avatar != null) {
+        if ($this->avatar != null) {
             return asset($this->avatar);
-        }else{
-            return 'https://ui-avatars.com/api/?name=' . str_replace(' ', '+', $this->name) . '&background=4e73df&color=ffffff&size=100';'htt';
+        } else {
+            return 'https://ui-avatars.com/api/?name=' . str_replace(' ', '+', $this->name) . '&background=911f27&color=ffffff&size=100';
+            'htt';
         }
     }
 }

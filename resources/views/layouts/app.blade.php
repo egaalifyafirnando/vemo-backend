@@ -21,7 +21,8 @@
         .form-control:focus {
             color: #6e707e;
             background-color: #fff;
-            border-color: #375dce;
+            /* warna border form */
+            border-color: #a0a0a0;
             outline: 0;
             box-shadow: none;
         }
@@ -39,9 +40,75 @@
         .card-header {
             padding: .75rem 1.25rem;
             margin-bottom: 0;
-            background-color: #4e73de;
+            background-color: #911f27;
             border-bottom: 1px solid #e3e6f0;
             color: white;
+        }
+
+        .sidebar,
+        .bg-primary,
+        .btn-primary {
+            background-color: #911f27 !important;
+            border-color: #911f27;
+        }
+
+        .active,
+        .btn-link {
+            color: #911f27 !important;
+        }
+
+        div#content {
+            background: #fff !important;
+        }
+
+        /* button */
+        .btn-green {
+            background: #167f85;
+            color: #fff;
+        }
+
+        .btn-green:hover {
+            background: #12676b;
+            color: #fff;
+        }
+
+        .btn-reset {
+            background: #f0f0f0;
+            color: #5c5c5c;
+        }
+
+        .btn-reset:hover {
+            background: #dddddd;
+            color: #5c5c5c;
+        }
+
+        .btn-hapus {
+            background: #911f27;
+            color: #fff;
+        }
+
+        .btn-hapus:hover {
+            background: #7a1b21;
+            color: #fff;
+        }
+
+        /* pagination color */
+        .pagination>li>a:focus,
+        .pagination>li>a:hover,
+        .pagination>li>span:focus,
+        .pagination>li>span:hover {
+            color: #911f27;
+            background-color: #eee;
+            border-color: #ddd;
+        }
+
+        .page-item.active .page-link {
+            background-color: #911f27;
+            border-color: #911f27;
+        }
+
+        .page-link {
+            color: #911f27;
         }
 
     </style>
@@ -56,11 +123,12 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="{{ route('admin.dashboard.index') }}">
                 <div class="sidebar-brand-icon">
-                    <img src="{{ asset('assets/img/brand.png') }}" style="width: 100px;">
+                    <img src="{{ asset('assets/img/brand.png') }}" style="width: 70px;">
                 </div>
                 <div class="sidebar-brand-text mx-3">VEMO STORE</div>
             </a>
