@@ -16,6 +16,22 @@
         rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <style>
+        .form-control:focus {
+            color: #6e707e;
+            background-color: #fff;
+            /* warna border form */
+            border-color: #666666;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background-color: #911f27 !important;
+            border-color: #911f27;
+        }
+
+    </style>
 </head>
 
 <body style="background-color: #e2e8f0;">

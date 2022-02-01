@@ -22,7 +22,7 @@
             color: #6e707e;
             background-color: #fff;
             /* warna border form */
-            border-color: #a0a0a0;
+            border-color: #666666;
             outline: 0;
             box-shadow: none;
         }

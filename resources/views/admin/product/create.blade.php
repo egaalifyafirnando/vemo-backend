@@ -67,9 +67,7 @@
                             <div class="form-group">
                                 <label>DESKRIPSI</label>
                                 <textarea class="form-control content @error('content') is-invalid @enderror" name="content"
-                                    rows="6" placeholder="Deskripsi Produk">
-                                                                                                {{ old('content') }}
-                                                                                            </textarea>
+                                    rows="6" placeholder="Deskripsi Produk">{{ old('content') }}</textarea>
                                 @error('content')
                                     <div class="invalid-feedback">
                                         {{ $message }}
