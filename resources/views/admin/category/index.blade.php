@@ -15,14 +15,12 @@
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.category.create') }}" class="btn btn-primary btn-sm"
-                                            style="padding-top: 10px;">
+                                        <a href="{{ route('admin.category.create') }}" class="btn btn-red btn-sm" style="padding-top: 10px;">
                                             <i class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
-                                    <input type="text" class="form-control" name="q"
-                                        placeholder="cari berdasarkan nama kategori">
+                                    <input type="text" class="form-control" name="q" placeholder="cari berdasarkan nama kategori">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> CARI
+                                        <button type="submit" class="btn btn-red"><i class="fa fa-search"></i> CARI
                                         </button>
                                     </div>
                                 </div>
@@ -49,12 +47,10 @@
                                             </td>
                                             <td>{{ $category->name }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.category.edit', $category->id) }}"
-                                                    class="btn btn-sm btn-green">
+                                                <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-sm btn-green">
                                                     <i class="fa fa-pencil-alt"></i>
                                                 </a>
-                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-hapus"
-                                                    id="{{ $category->id }}">
+                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-red" id="{{ $category->id }}">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </td>

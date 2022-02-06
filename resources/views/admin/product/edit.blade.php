@@ -11,8 +11,7 @@
                         <h6 class="m-0 font-weight-bold"><i class="fas fa-shopping-bag"></i> EDIT PRODUK</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.product.update', $product->id) }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ route('admin.product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
@@ -21,8 +20,7 @@
                             </div>
                             <div class="form-group">
                                 <label>NAMA PRODUK</label>
-                                <input type="text" name="title" value="{{ old('title', $product->title) }}"
-                                    placeholder="Masukkan Nama Produk"
+                                <input type="text" name="title" value="{{ old('title', $product->title) }}" placeholder="Masukkan Nama Produk"
                                     class="form-control @error('title') is-invalid @enderror">
                                 @error('title')
                                     <div class="invalid-feedback" style="display: block">
@@ -55,10 +53,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>BERAT (gram)</label>
-                                        <input type="number" name="weight"
-                                            class="form-control @error('weight') is-invalid @enderror"
-                                            value="{{ old('weight', $product->weight) }}"
-                                            placeholder="Berat Produk (gram)">
+                                        <input type="number" name="weight" class="form-control @error('weight') is-invalid @enderror"
+                                            value="{{ old('weight', $product->weight) }}" placeholder="Berat Produk (gram)">
                                         @error('weight')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -69,8 +65,7 @@
                             </div>
                             <div class="form-group">
                                 <label>DESKRIPSI</label>
-                                <textarea class="form-control content @error('content') is-invalid @enderror" name="content"
-                                    rows="6"
+                                <textarea class="form-control content @error('content') is-invalid @enderror" name="content" rows="6"
                                     placeholder="Deskripsi Produk">{{ old('content', $product->content) }}</textarea>
                                 @error('content')
                                     <div class="invalid-feedback">
@@ -82,8 +77,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>HARGA</label>
-                                        <input type="number" name="price"
-                                            class="form-control @error('price') is-invalid @enderror"
+                                        <input type="number" name="price" class="form-control @error('price') is-invalid @enderror"
                                             value="{{ old('price', $product->price) }}" placeholder="Harga Produk">
                                         @error('price')
                                             <div class="invalid-feedback" style="display: block">
@@ -95,10 +89,8 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>DISKON (%)</label>
-                                        <input type="number" name="discount"
-                                            class="form-control @error('discount') is-invalid @enderror"
-                                            value="{{ old('discount', $product->discount) }}"
-                                            placeholder="Diskon Produk (%)">
+                                        <input type="number" name="discount" class="form-control @error('discount') is-invalid @enderror"
+                                            value="{{ old('discount', $product->discount) }}" placeholder="Diskon Produk (%)">
                                         @error('discount')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -109,8 +101,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>STOCK</label>
-                                        <input type="number" name="stock"
-                                            class="form-control @error('stock') is-invalid @enderror"
+                                        <input type="number" name="stock" class="form-control @error('stock') is-invalid @enderror"
                                             value="{{ old('stock', $product->stock) }}" placeholder="Diskon Produk (%)">
                                         @error('stock')
                                             <div class="invalid-feedback">
@@ -122,7 +113,7 @@
                             </div>
                             <button class="btn btn-green mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
                                 UPDATE</button>
-                            <button class="btn btn-reset" type="reset"><i class="fa fa-redo"></i>
+                            <button class="btn btn-gray" type="reset"><i class="fa fa-redo"></i>
                                 RESET</button>
                         </form>
                     </div>
@@ -132,8 +123,8 @@
     </div>
     <!-- /.container-fluid -->
     {{-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> --}}
-    <script src="https://cdn.tiny.cloud/1/0af2vyw4hurarjicywo4908m9jrpiq8rli8merifbucxvvo5/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/0af2vyw4hurarjicywo4908m9jrpiq8rli8merifbucxvvo5/tinymce/5/tinymce.min.js" referrerpolicy="origin">
+    </script>
     <script>
         var editor_config = {
             selector: "textarea.content",

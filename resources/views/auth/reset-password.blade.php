@@ -24,9 +24,9 @@
                             <input type="hidden" name="token" value="{{ $request->route('token') }}">
                             <div class="form-group">
                                 <label class="font-weight-bold text-uppercase">Email Address</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ $request->email ?? old('email') }}" required
-                                    autocomplete="email" autofocus placeholder="Masukkan Alamat Elamil">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ $request->email ?? old('email') }}" required autocomplete="email" autofocus
+                                    placeholder="Masukkan Alamat Elamil">
                                 @error('email')
                                     <div class="alert alert-danger mt-2">
                                         <strong>{{ $message }}</strong>
@@ -35,9 +35,8 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold text-uppercase">Password</label>
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password" required
-                                    autocomplete="new-password" placeholder="Password Baru">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"
+                                    required autocomplete="new-password" placeholder="Password Baru">
                                 @error('password')
                                     <div class="alert alert-danger mt-2">
                                         <strong>{{ $message }}</strong>
@@ -46,11 +45,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold text-uppercase">Konfirmasi Password</label>
-                                <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required autocomplete="new-password"
-                                    placeholder="Konfirmasi Password Baru">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required
+                                    autocomplete="new-password" placeholder="Konfirmasi Password Baru">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">UPDATE PASSWORD</button>
+                            <button type="submit" class="btn btn-red btn-block">UPDATE PASSWORD</button>
                         </form>
                     </div>
                 </div>

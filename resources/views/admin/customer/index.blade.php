@@ -14,10 +14,9 @@
                         <form action="{{ route('admin.customer.index') }}" method="GET">
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="q"
-                                        placeholder="cari berdasarkan nama customer">
+                                    <input type="text" class="form-control" name="q" placeholder="cari berdasarkan nama customer">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>
+                                        <button type="submit" class="btn btn-red"><i class="fa fa-search"></i>
                                             CARI</button>
                                     </div>
                                 </div>

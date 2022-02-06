@@ -15,6 +15,7 @@
                             @csrf
                             <div class="form-group">
                                 <label>GAMBAR</label>
+                                <small>direkomendasikan ukuran 1020px x 500px</small>
                                 <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
                                 @error('image')
                                     <div class="invalid-feedback" style="display: block">
@@ -32,9 +33,9 @@
                                     </div>
                                 @enderror
                             </div>
-                            <button class="btn btn-primary mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
+                            <button class="btn btn-green mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
                                 SIMPAN</button>
-                            <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i>
+                            <button class="btn btn-gray" type="reset"><i class="fa fa-redo"></i>
                                 RESET</button>
                         </form>
                     </div>
@@ -49,7 +50,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col" style="text-align: center;width: 6%">NO.</th>
-                                        <th scope="col">GAMBAR</th>
+                                        <th scope="col" style="width: 25%;text-align: center">GAMBAR</th>
                                         <th scope="col">LINK</th>
                                         <th scope="col" style="width: 15%;text-align: center">AKSI</th>
                                     </tr>
@@ -60,13 +61,11 @@
                                             <th scope="row" style="text-align: center">
                                                 {{ ++$no + ($sliders->currentPage() - 1) * $sliders->perPage() }}</th>
                                             <td class="text-center">
-                                                <img src="{{ $slider->image }}" class="rounded"
-                                                    style="width:200px">
+                                                <img src="{{ $slider->image }}" class="rounded" style="width:200px">
                                             </td>
                                             <td>{{ $slider->link }}</td>
                                             <td class="text-center">
-                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-danger"
-                                                    id="{{ $slider->id }}">
+                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-red" id="{{ $slider->id }}">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </td>

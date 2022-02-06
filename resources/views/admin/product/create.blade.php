@@ -24,8 +24,7 @@
                             </div>
                             <div class="form-group">
                                 <label>NAMA PRODUK</label>
-                                <input type="text" name="title" value="{{ old('title') }}"
-                                    placeholder="Masukkan Nama Produk"
+                                <input type="text" name="title" value="{{ old('title') }}" placeholder="Masukkan Nama Produk"
                                     class="form-control @error('title') is-invalid @enderror">
                                 @error('title')
                                     <div class="invalid-feedback" style="display: block">
@@ -53,8 +52,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>BERAT (gram)</label>
-                                        <input type="number" name="weight"
-                                            class="form-control @error('weight') is-invalid @enderror"
+                                        <input type="number" name="weight" class="form-control @error('weight') is-invalid @enderror"
                                             value="{{ old('weight') }}" placeholder="Berat Produk (gram)">
                                         @error('weight')
                                             <div class="invalid-feedback">
@@ -66,8 +64,8 @@
                             </div>
                             <div class="form-group">
                                 <label>DESKRIPSI</label>
-                                <textarea class="form-control content @error('content') is-invalid @enderror" name="content"
-                                    rows="6" placeholder="Deskripsi Produk">{{ old('content') }}</textarea>
+                                <textarea class="form-control content @error('content') is-invalid @enderror" name="content" rows="6"
+                                    placeholder="Deskripsi Produk">{{ old('content') }}</textarea>
                                 @error('content')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -78,8 +76,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>HARGA</label>
-                                        <input type="number" name="price"
-                                            class="form-control @error('price') is-invalid @enderror"
+                                        <input type="number" name="price" class="form-control @error('price') is-invalid @enderror"
                                             value="{{ old('price') }}" placeholder="Harga Produk">
                                         @error('price')
                                             <div class="invalid-feedback" style="display: block">
@@ -91,8 +88,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>DISKON (%)</label>
-                                        <input type="number" name="discount"
-                                            class="form-control @error('discount') is-invalid @enderror"
+                                        <input type="number" name="discount" class="form-control @error('discount') is-invalid @enderror"
                                             value="{{ old('discount') }}" placeholder="Diskon Produk (%)">
                                         @error('discount')
                                             <div class="invalid-feedback">
@@ -104,8 +100,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>STOCK</label>
-                                        <input type="number" name="stock"
-                                            class="form-control @error('stock') is-invalid @enderror"
+                                        <input type="number" name="stock" class="form-control @error('stock') is-invalid @enderror"
                                             value="{{ old('stock') }}" placeholder="Stock Produk">
                                         @error('stock')
                                             <div class="invalid-feedback">
@@ -115,10 +110,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-green mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
-                                SIMPAN</button>
-                            <button class="btn btn-reset" type="reset"><i class="fa fa-redo"></i>
-                                RESET</button>
+                            <button class="btn btn-green mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> SIMPAN</button>
+                            <button class="btn btn-gray" type="reset"><i class="fa fa-redo"></i> RESET</button>
                         </form>
                     </div>
                 </div>
@@ -127,8 +120,8 @@
     </div>
     <!-- /.container-fluid -->
     {{-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> --}}
-    <script src="https://cdn.tiny.cloud/1/0af2vyw4hurarjicywo4908m9jrpiq8rli8merifbucxvvo5/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/0af2vyw4hurarjicywo4908m9jrpiq8rli8merifbucxvvo5/tinymce/5/tinymce.min.js" referrerpolicy="origin">
+    </script>
     <script>
         var editor_config = {
             selector: "textarea.content",

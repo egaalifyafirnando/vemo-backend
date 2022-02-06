@@ -14,10 +14,9 @@
                         <form action="{{ route('admin.order.index') }}" method="GET">
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="q"
-                                        placeholder="cari berdasarkan no. invoice">
+                                    <input type="text" class="form-control" name="q" placeholder="cari berdasarkan no. invoice">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>
+                                        <button type="submit" class="btn btn-red"><i class="fa fa-search"></i>
                                             CARI</button>
                                     </div>
                                 </div>
@@ -45,8 +44,7 @@
                                             <td class="text-center">{{ $invoice->status }}</td>
                                             <td>{{ moneyFormat($invoice->grand_total) }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.order.show', $invoice->id) }}"
-                                                    class="btn btn-sm btn-primary">
+                                                <a href="{{ route('admin.order.show', $invoice->id) }}" class="btn btn-sm btn-red">
                                                     <i class="fa fa-list-ul"></i>
                                                 </a>
                                             </td>

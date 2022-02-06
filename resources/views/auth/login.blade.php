@@ -24,8 +24,7 @@
                             <div class="form-group">
                                 <label class="font-weight-bold text-uppercase">Email address</label>
                                 <input type="email" name="email" value="{{ old('email') }}"
-                                    class="form-control @error('email') is-invalid @enderror"
-                                    placeholder="Masukkan Alamat Email">
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan Alamat Email">
                                 @error('email')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
@@ -34,8 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold text-uppercase">Password</label>
-                                <input type="password" name="password"
-                                    class="form-control @error('password') is-invalid @enderror"
+                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
                                     placeholder="Masukkan Password">
                                 @error('password')
                                     <div class="alert alert-danger mt-2">
@@ -43,7 +41,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
+                            <button type="submit" class="btn btn-red btn-block">LOGIN</button>
                             <hr>
                             <a href="/forgot-password">Lupa Password ?</a>
                         </form>

@@ -11,9 +11,7 @@
     <title>{{ $title ?? config('app.name') }} - Admin</title>
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <style>
@@ -26,9 +24,14 @@
             box-shadow: none;
         }
 
-        .btn-primary {
-            background-color: #911f27 !important;
-            border-color: #911f27;
+        .btn-red {
+            background: #911f27;
+            color: #fff;
+        }
+
+        .btn-red:hover {
+            background: #7a1b21;
+            color: #fff;
         }
 
     </style>

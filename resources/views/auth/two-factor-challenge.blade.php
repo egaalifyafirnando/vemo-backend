@@ -32,7 +32,7 @@
                                 <input type="text" id="recovery_code" class="form-control" name="recovery_code" />
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">LOGIN</button>
+                                <button type="submit" class="btn btn-red btn-lg btn-block" tabindex="4">LOGIN</button>
                             </div>
                         </form>
                     </div>

@@ -15,13 +15,12 @@
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <a href="{{ route('admin.product.create') }}" class="btn btn-primary btn-sm"
-                                            style="padding-top: 10px;"><i class="fa fa-plus-circle"></i> TAMBAH</a>
+                                        <a href="{{ route('admin.product.create') }}" class="btn btn-red btn-sm" style="padding-top: 10px;"><i
+                                                class="fa fa-plus-circle"></i> TAMBAH</a>
                                     </div>
-                                    <input type="text" class="form-control" name="q"
-                                        placeholder="cari berdasarkan nama produk">
+                                    <input type="text" class="form-control" name="q" placeholder="cari berdasarkan nama produk">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>
+                                        <button type="submit" class="btn btn-red"><i class="fa fa-search"></i>
                                             CARI</button>
                                     </div>
                                 </div>
@@ -45,10 +44,10 @@
                                             <td>{{ $product->title }}</td>
                                             <td>{{ $product->category->name }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.product.edit', $product->id) }}"
-                                                    class="btn btn-sm btn-green"><i class="fa fa-pencil-alt"></i></a>
-                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-hapus"
-                                                    id="{{ $product->id }}"><i class="fa fa-trash"></i></button>
+                                                <a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-sm btn-green"><i
+                                                        class="fa fa-pencil-alt"></i></a>
+                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-red" id="{{ $product->id }}"><i
+                                                        class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
                                     @empty
