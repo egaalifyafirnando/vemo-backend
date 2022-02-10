@@ -47,15 +47,15 @@
         <div class="row">
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card shadow h-100 py-2" style="border-left: 5px solid #2D5C7F;">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">PENDING</div>
+                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #2D5C7F">PENDING</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pending }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-circle-notch fa-spin fa-2x" style="color: #4d72df"></i>
+                                <i class="fas fa-circle-notch fa-spin fa-2x" style="color: #2D5C7F"></i>
                             </div>
                         </div>
                     </div>
@@ -64,15 +64,15 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
+                <div class="card shadow h-100 py-2" style="border-left: 5px solid #167f85;">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">SUCCESS</div>
+                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#167f85">SUCCESS</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $success }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-check-circle fa-2x" style="color:#1cc88a"></i>
+                                <i class="fas fa-check-circle fa-2x" style="color:#167f85"></i>
                             </div>
                         </div>
                     </div>
@@ -81,15 +81,15 @@
 
             <!-- Pending Requests Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card shadow h-100 py-2" style="border-left: 5px solid #FECD51;">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">EXPIRED</div>
+                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#FECD51">EXPIRED</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $expired }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-exclamation-triangle fa-2x" style="color:#f6c23e"></i>
+                                <i class="fas fa-exclamation-triangle fa-2x" style="color:#FECD51"></i>
                             </div>
                         </div>
                     </div>
@@ -98,11 +98,11 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 border-left-danger shadow h-100 py-2">
+                <div class="card shadow h-100 py-2" style="border-left: 5px solid #911F27;">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">FAILED</div>
+                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#911F27">FAILED</div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
                                         <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $failed }}</div>
@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-times-circle fa-2x" style="color:darkred"></i>
+                                <i class="fas fa-times-circle fa-2x" style="color:#911F27"></i>
                             </div>
                         </div>
                     </div>

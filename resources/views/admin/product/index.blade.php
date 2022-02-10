@@ -44,9 +44,9 @@
                                             <td>{{ $product->title }}</td>
                                             <td>{{ $product->category->name }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-sm btn-green"><i
+                                                <a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-sm btn-green mb-1"><i
                                                         class="fa fa-pencil-alt"></i></a>
-                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-red" id="{{ $product->id }}"><i
+                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-red mb-1" id="{{ $product->id }}"><i
                                                         class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>

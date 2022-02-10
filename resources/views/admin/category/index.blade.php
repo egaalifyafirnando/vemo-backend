@@ -47,10 +47,10 @@
                                             </td>
                                             <td>{{ $category->name }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-sm btn-green">
+                                                <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-sm btn-green mb-1">
                                                     <i class="fa fa-pencil-alt"></i>
                                                 </a>
-                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-red" id="{{ $category->id }}">
+                                                <button onClick="Delete(this.id)" class="btn btn-sm btn-red mb-1" id="{{ $category->id }}">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </td>

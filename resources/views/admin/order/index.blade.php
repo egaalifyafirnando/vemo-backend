@@ -27,26 +27,52 @@
                                 <thead>
                                     <tr>
                                         <th scope="col" style="text-align: center;width: 6%">NO.</th>
-                                        <th scope="col">NO. INVOICE</th>
-                                        <th scope="col">NAMA LENGKAP</th>
-                                        <th scope="col">GRAND TOTAL</th>
-                                        <th scope="col">STATUS</th>
-                                        <th scope="col" style="width: 15%;text-align: center">AKSI</th>
+                                        <th scope="col" style="width: 19%">NO. INVOICE</th>
+                                        <th scope="col" style="width: 35%">NAMA LENGKAP</th>
+                                        <th scope="col">TOTAL PEMBAYARAN</th>
+                                        <th scope="col" style="width: 10%">STATUS</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($invoices as $no => $invoice)
                                         <tr>
                                             <th scope="row" style="text-align: center">
-                                                {{ ++$no + ($invoices->currentPage() - 1) * $invoices->perPage() }}</th>
-                                            <td>{{ $invoice->invoice }}</td>
+                                                {{ ++$no + ($invoices->currentPage() - 1) * $invoices->perPage() }}
+                                            </th>
+                                            <td>
+                                                <a href="{{ route('admin.order.show', $invoice->id) }}"
+                                                    class="badge badge-pill text-white p-2 cursor-pointer"
+                                                    style="background: #911F27;font-size:.8rem;">
+                                                    {{ $invoice->invoice }}
+                                                </a>
+                                            </td>
                                             <td>{{ $invoice->name }}</td>
-                                            <td class="text-center">{{ $invoice->status }}</td>
                                             <td>{{ moneyFormat($invoice->grand_total) }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.order.show', $invoice->id) }}" class="btn btn-sm btn-red">
-                                                    <i class="fa fa-list-ul"></i>
-                                                </a>
+                                                @if ($invoice->status == 'pending')
+                                                    <span class="badge text-white font-weight-bolder text-uppercase p-2"
+                                                        style="background: #2D5C7F;font-size:.7rem;">
+                                                        {{ $invoice->status }}
+                                                    </span>
+                                                @endif
+                                                @if ($invoice->status == 'success')
+                                                    <span class="badge text-white font-weight-bolder text-uppercase p-2"
+                                                        style="background: #105652;font-size:.7rem;">
+                                                        {{ $invoice->status }}
+                                                    </span>
+                                                @endif
+                                                @if ($invoice->status == 'expired')
+                                                    <span class="badge font-weight-bolder text-uppercase p-2"
+                                                        style="background:#FECD51;font-size:.7rem;">
+                                                        {{ $invoice->status }}
+                                                    </span>
+                                                @endif
+                                                @if ($invoice->status == 'failed')
+                                                    <span class="badge text-white font-weight-bolder text-uppercase p-2"
+                                                        style="background: #911F27;font-size:.7rem;">
+                                                        {{ $invoice->status }}
+                                                    </span>
+                                                @endif
                                             </td>
                                         </tr>
                                     @empty

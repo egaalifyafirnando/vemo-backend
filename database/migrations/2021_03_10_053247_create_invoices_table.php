@@ -30,6 +30,7 @@ class CreateInvoicesTable extends Migration
             $table->string('snap_token')->nullable();
             $table->bigInteger('grand_total');
             $table->string('product_message');
+            $table->string('shipping_receipt')->nullable();
             $table->timestamps();
         });
     }
