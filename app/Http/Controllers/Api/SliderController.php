@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
-use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
@@ -13,12 +12,13 @@ class SliderController extends Controller
      *
      * @return void
      */
-    public function index() {
+    public function index()
+    {
         $sliders = Slider::latest()->get();
         return response()->json([
-            'success' => true,
-            'message' => 'List Data Sliders',
-            'sliders' => $sliders
+            'success'   => true,
+            'message'   => 'List Data Sliders',
+            'sliders'   => $sliders
         ]);
     }
 }

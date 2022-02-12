@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container">
-
         <!-- Outer Row -->
         <div class="row justify-content-center">
             <div class="col-md-4">

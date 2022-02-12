@@ -21,9 +21,9 @@ class RajaOngkirController extends Controller
     {
         $provinces = Province::all();
         return response()->json([
-            'success' => true,
-            'message' => 'List Data provinces',
-            'data' => $provinces
+            'success'   => true,
+            'message'   => 'List Data provinces',
+            'data'      => $provinces
         ]);
     }
 
@@ -37,9 +37,9 @@ class RajaOngkirController extends Controller
     {
         $city = City::where('province_id', $request->province_id)->get();
         return response()->json([
-            'success' => true,
-            'message' => 'List Data Cities By Province',
-            'data' => $city
+            'success'   => true,
+            'message'   => 'List Data Cities By Province',
+            'data'      => $city
         ]);
     }
 
@@ -52,15 +52,15 @@ class RajaOngkirController extends Controller
     public function checkOngkir(Request $request)
     {
         $cost = RajaOngkir::ongkosKirim([
-            'origin' => 444, // ID kota/kabupaten asal, 409 adalah kode kota sidoarjo, kode 444 opsional
-            'destination' => $request->city_destination, // ID kota/kabupaten tujuan
-            'weight' => $request->weight, // berat barang dalam gram
-            'courier' => $request->courier // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
+            'origin'        => 444, // ID kota/kabupaten asal, 409 adalah kode kota sidoarjo, kode 444 opsional
+            'destination'   => $request->city_destination, // ID kota/kabupaten tujuan
+            'weight'        => $request->weight, // berat barang dalam gram
+            'courier'       => $request->courier // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
         ])->get();
         return response()->json([
-            'success' => true,
-            'message' => 'List Data Cost All Courir: ' . $request->courier,
-            'data' => $cost
+            'success'   => true,
+            'message'   => 'List Data Cost All Courir: ' . $request->courier,
+            'data'      => $cost
         ]);
     }
 }

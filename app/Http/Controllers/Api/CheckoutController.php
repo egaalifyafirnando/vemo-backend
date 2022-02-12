@@ -46,47 +46,46 @@ class CheckoutController extends Controller
             $no_invoice = 'INV-' . Str::upper($random);
 
             $invoice = Invoice::create([
-                'invoice' => $no_invoice,
-                'customer_id' => auth()->guard('api')->user()->id,
-                'courier' => $this->request->courier,
-                'service' => $this->request->service,
-                'cost_courier' => $this->request->cost,
-                'weight' => $this->request->weight,
-                'name' => $this->request->name,
-                'phone' => $this->request->phone,
-                'province' => $this->request->province,
-                'city' => $this->request->city,
-                'address' => $this->request->address,
-                'grand_total' => $this->request->grand_total,
-                'status' => 'pending',
-                'product_message' => $this->request->product_message,
+                'invoice'           => $no_invoice,
+                'customer_id'       => auth()->guard('api')->user()->id,
+                'courier'           => $this->request->courier,
+                'service'           => $this->request->service,
+                'cost_courier'      => $this->request->cost,
+                'weight'            => $this->request->weight,
+                'name'              => $this->request->name,
+                'phone'             => $this->request->phone,
+                'province'          => $this->request->province,
+                'city'              => $this->request->city,
+                'address'           => $this->request->address,
+                'grand_total'       => $this->request->grand_total,
+                'status'            => 'pending',
+                'product_message'   => $this->request->product_message,
             ]);
 
             foreach (Cart::where('customer_id', auth()->guard('api')->user()->id)->get() as $cart) {
                 //insert product ke table order
                 $invoice->orders()->create([
-                    'invoice_id' => $invoice->id,
-                    'invoice' => $no_invoice,
-                    'product_id' => $cart->product_id,
-                    'product_name' => $cart->product->title,
-                    'image' => $cart->product->image,
-                    'qty' => $cart->quantity,
-                    'price' => $cart->price,
+                    'invoice_id'    => $invoice->id,
+                    'invoice'       => $no_invoice,
+                    'product_id'    => $cart->product_id,
+                    'product_name'  => $cart->product->title,
+                    'image'         => $cart->product->image,
+                    'qty'           => $cart->quantity,
+                    'price'         => $cart->price,
                 ]);
             }
 
             // Buat transaksi ke midtrans kemudian save snap tokennya.
             $payload = [
                 'transaction_details' => [
-                    'order_id' => $invoice->invoice,
-                    'gross_amount' => $invoice->grand_total,
+                    'order_id'      => $invoice->invoice,
+                    'gross_amount'  => $invoice->grand_total,
                 ],
                 'customer_details' => [
-                    'first_name' => $invoice->name,
-                    'email' =>
-                    auth()->guard('api')->user()->email,
-                    'phone' => $invoice->phone,
-                    'shipping_address' => $invoice->address
+                    'first_name'        => $invoice->name,
+                    'email'             => auth()->guard('api')->user()->email,
+                    'phone'             => $invoice->phone,
+                    'shipping_address'  => $invoice->address
                 ]
             ];
 
@@ -114,9 +113,7 @@ class CheckoutController extends Controller
         $payload = $request->getContent();
         $notification = json_decode($payload);
 
-        $validSignatureKey = hash("sha512", $notification->order_id .
-            $notification->status_code . $notification->gross_amount .
-            config('services.midtrans.serverKey'));
+        $validSignatureKey = hash("sha512", $notification->order_id . $notification->status_code . $notification->gross_amount . config('services.midtrans.serverKey'));
 
         if ($notification->signature_key != $validSignatureKey) {
             return response(['message' => 'Invalid signature'], 403);

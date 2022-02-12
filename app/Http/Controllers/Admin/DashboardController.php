@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Invoice;
 
 class DashboardController extends Controller
@@ -13,14 +12,13 @@ class DashboardController extends Controller
      * 
      * @return void
      */
-    public function index() 
+    public function index()
     {
         // count invoice
         $pending = Invoice::where('status', 'pending')->count();
         $success = Invoice::where('status', 'success')->count();
         $expired = Invoice::where('status', 'expired')->count();
         $failed = Invoice::where('status', 'failed')->count();
-
 
         // year and month
         $year = date('Y');

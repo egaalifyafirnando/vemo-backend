@@ -33,10 +33,8 @@
                                     </div>
                                 @enderror
                             </div>
-                            <button class="btn btn-green mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
-                                SIMPAN</button>
-                            <button class="btn btn-gray" type="reset"><i class="fa fa-redo"></i>
-                                RESET</button>
+                            <button class="btn btn-green mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> SIMPAN</button>
+                            <button class="btn btn-gray" type="reset"><i class="fa fa-redo"></i> RESET</button>
                         </form>
                     </div>
                 </div>

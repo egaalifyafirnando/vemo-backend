@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
-{    
+{
     /**
      * index
      *
@@ -23,7 +22,7 @@ class ProductController extends Controller
             'products'  => $products
         ], 200);
     }
-    
+
     /**
      * show
      *
@@ -34,19 +33,17 @@ class ProductController extends Controller
     {
         $product = Product::where('slug', $slug)->first();
 
-        if($product) {
+        if ($product) {
             return response()->json([
-                'success' => true,
+                'success'   => true,
                 'message'   => 'Detail Data Product',
-                'product' => $product
+                'product'   => $product
             ], 200);
         } else {
             return response()->json([
-                'success' => false,
+                'success'   => false,
                 'message'   => 'Data Product Tidak Ditemukan',
             ], 404);
-
         }
     }
-
 }

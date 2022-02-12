@@ -51,7 +51,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #2D5C7F">PENDING</div>
+                                <div class="text-xs font-weight-bold mb-1" style="color: #2D5C7F">PENDING</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pending }}</div>
                             </div>
                             <div class="col-auto">
@@ -68,7 +68,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#167f85">SUCCESS</div>
+                                <div class="text-xs font-weight-bold mb-1" style="color:#167f85">SUCCESS</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $success }}</div>
                             </div>
                             <div class="col-auto">
@@ -85,7 +85,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#FECD51">EXPIRED</div>
+                                <div class="text-xs font-weight-bold mb-1" style="color:#FECD51">EXPIRED</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $expired }}</div>
                             </div>
                             <div class="col-auto">
@@ -102,7 +102,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#911F27">FAILED</div>
+                                <div class="text-xs font-weight-bold mb-1" style="color:#911F27">FAILED</div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
                                         <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $failed }}</div>

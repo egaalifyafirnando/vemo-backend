@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
-{    
+{
     /**
      * index
      *
@@ -22,7 +21,7 @@ class CategoryController extends Controller
             'categories'    => $categories
         ]);
     }
-    
+
     /**
      * show
      *
@@ -33,20 +32,20 @@ class CategoryController extends Controller
     {
         $category = Category::where('slug', $slug)->first();
 
-        if($category) {
+        if ($category) {
             return response()->json([
-                'success' => true,
-                'message' => 'List Product By Category: '. $category->name,
-                'product' => $category->products()->latest()->get()
+                'success'   => true,
+                'message'   => 'List Product By Category: ' . $category->name,
+                'product'   => $category->products()->latest()->get()
             ], 200);
         } else {
             return response()->json([
-                'success' => false,
-                'message' => 'Data Product By Category Tidak Ditemukan',
+                'success'   => false,
+                'message'   => 'Data Product By Category Tidak Ditemukan',
             ], 404);
         }
     }
-    
+
     /**
      * categoryHeader
      *
@@ -62,5 +61,4 @@ class CategoryController extends Controller
             'categories'    => $categories
         ]);
     }
-
 }

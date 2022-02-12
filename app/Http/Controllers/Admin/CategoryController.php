@@ -44,7 +44,7 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2000',
-            'name' => 'required|unique:categories'
+            'name'  => 'required|unique:categories'
         ]);
 
         // upload image
@@ -54,8 +54,8 @@ class CategoryController extends Controller
         // save to DataBase
         $category = Category::create([
             'image' => $image->hashName(),
-            'name' => $request->name,
-            'slug' => Str::slug($request->name, '-')
+            'name'  => $request->name,
+            'slug'  => Str::slug($request->name, '-')
         ]);
 
 
@@ -66,17 +66,6 @@ class CategoryController extends Controller
             // redirect dengan pesan error
             return redirect()->route('admin.category.index')->with(['error' => 'Data Gagal Disimpan !']);
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -108,13 +97,12 @@ class CategoryController extends Controller
             // update data tanpa image
             $category = Category::findOrFail($category->id);
             $category->update([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name, '-')
+                'name'  => $request->name,
+                'slug'  => Str::slug($request->name, '-')
             ]);
         } else {
             // hapus image lama
             Storage::disk('local')->delete('public/categories/' . $category->image);
-
 
             // upload image baru
             $image = $request->file('image');
@@ -124,8 +112,8 @@ class CategoryController extends Controller
             $category = Category::findOrFail($category->id);
             $category->update([
                 'image' => $image->hashName(),
-                'name' => $request->name,
-                'slug' => Str::slug($request->name, '-')
+                'name'  => $request->name,
+                'slug'  => Str::slug($request->name, '-')
             ]);
         }
 

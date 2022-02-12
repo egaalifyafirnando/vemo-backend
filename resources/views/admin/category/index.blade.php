@@ -20,8 +20,7 @@
                                     </div>
                                     <input type="text" class="form-control" name="q" placeholder="cari berdasarkan nama kategori">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-red"><i class="fa fa-search"></i> CARI
-                                        </button>
+                                        <button type="submit" class="btn btn-red"><i class="fa fa-search"></i> CARI</button>
                                     </div>
                                 </div>
                             </div>

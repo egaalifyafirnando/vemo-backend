@@ -18,7 +18,6 @@
                         <div class="text-center">
                             <h1 class="h5 text-gray-900 mb-3">LOGIN ADMIN</h1>
                         </div>
-
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="form-group">

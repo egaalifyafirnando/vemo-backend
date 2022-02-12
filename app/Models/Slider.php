@@ -24,7 +24,7 @@ class Slider extends Model
      * @param mixed $image
      * @return
      */
-    public function getImageAttribute($image) 
+    public function getImageAttribute($image)
     {
         return asset('storage/sliders/' . $image);
     }

@@ -16,9 +16,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->when(request()->q, function($users) {
+        $users = User::latest()->when(request()->q, function ($users) {
             $users = $users->where('name', 'like', '%' . request()->q . '%');
         })->paginate(10);
+
         return view('admin.user.index', compact('users'));
     }
 
@@ -30,7 +31,6 @@ class UserController extends Controller
     public function create()
     {
         return view('admin.user.create');
-
     }
 
     /**
@@ -42,22 +42,22 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed'
+            'name'      => 'required',
+            'email'     => 'required|email|unique:users',
+            'password'  => 'required|confirmed'
         ]);
 
         //save to DB
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'password'  => bcrypt($request->password),
         ]);
 
-        if($user){
+        if ($user) {
             //redirect dengan pesan sukses
             return redirect()->route('admin.user.index')->with(['success' => 'Data Berhasil Disimpan!']);
-        }else{
+        } else {
             //redirect dengan pesan error
             return redirect()->route('admin.user.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
@@ -84,33 +84,33 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' . $user->id,
-            'password' => 'required|confirmed'
+            'name'      => 'required',
+            'email'     => 'required|email|unique:users,email,' . $user->id,
+            'password'  => 'required|confirmed'
         ]);
 
         //cek password
-        if($request->password == "") {
+        if ($request->password == "") {
             //update tanpa password
             $user = User::findOrFail($user->id);
             $user->update([
-                'name' => $request->name,
+                'name'  => $request->name,
                 'email' => $request->email
             ]);
         } else {
             //update dengan password
             $user = User::findOrFail($user->id);
             $user->update([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => bcrypt($request->password),
+                'name'      => $request->name,
+                'email'     => $request->email,
+                'password'  => bcrypt($request->password),
             ]);
         }
 
-        if($user){
+        if ($user) {
             //redirect dengan pesan sukses
             return redirect()->route('admin.user.index')->with(['success' => 'Data Berhasil Diupdate!']);
-        }else{
+        } else {
             //redirect dengan pesan error
             return redirect()->route('admin.user.index')->with(['error' => 'Data Gagal Diupdate!']);
         }
@@ -127,11 +127,11 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        if($user){
+        if ($user) {
             return response()->json([
                 'status' => 'success'
             ]);
-        }else{
+        } else {
             return response()->json([
                 'status' => 'error'
             ]);

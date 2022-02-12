@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{ asset('assets/img/shop-2.png') }}" type="image/x-icon">
-    <title>{{ $title ?? config('app.name') }} - Admin Online Shop</title>
+    <title>{{ $title ?? config('app.name') }} - Admin Vemo Store</title>
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -122,7 +122,6 @@
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
@@ -132,10 +131,8 @@
                 </div>
                 <div class="sidebar-brand-text mx-3">VEMO STORE</div>
             </a>
-
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
             <!-- Nav Item - Dashboard -->
             <li class="nav-item {{ Request::is('admin/dashboard*') ? ' active' : '' }}">
                 <a class="nav-link" href="{{ route('admin.dashboard.index') }}">
@@ -143,13 +140,10 @@
                     <span>DASHBOARD</span>
                 </a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
-
             <!-- Heading -->
             <div class="sidebar-heading">PRODUK</div>
-
             <!-- Nav Item - Pages Collapse Menu -->
             <li
                 class="nav-item {{ Request::is('admin/category*') ? ' active' : '' }} {{ Request::is('admin/product*') ? ' active' : '' }}">
@@ -261,9 +255,7 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

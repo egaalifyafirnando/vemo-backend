@@ -111,10 +111,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-green mr-1 mb-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
-                                UPDATE</button>
-                            <button class="btn btn-gray mb-1" type="reset"><i class="fa fa-redo"></i>
-                                RESET</button>
+                            <button class="btn btn-green mr-1 mb-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i> UPDATE</button>
+                            <button class="btn btn-gray mb-1" type="reset"><i class="fa fa-redo"></i> RESET</button>
                         </form>
                     </div>
                 </div>
@@ -122,7 +120,6 @@
         </div>
     </div>
     <!-- /.container-fluid -->
-    {{-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> --}}
     <script src="https://cdn.tiny.cloud/1/0af2vyw4hurarjicywo4908m9jrpiq8rli8merifbucxvvo5/tinymce/5/tinymce.min.js" referrerpolicy="origin">
     </script>
     <script>

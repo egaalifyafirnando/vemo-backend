@@ -24,6 +24,7 @@ class ProductController extends Controller
                 $products = $products->where('title', 'like', '%' . request()->q . '%');
             }
         )->paginate(10);
+
         return view('admin.product.index', compact('products'));
     }
 
@@ -35,6 +36,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::latest()->get();
+
         return view('admin.product.create', compact('categories'));
     }
 
@@ -87,17 +89,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -106,6 +97,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::latest()->get();
+
         return view('admin.product.edit', compact('product', 'categories'));
     }
 

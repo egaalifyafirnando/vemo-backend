@@ -26,9 +26,9 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:customers',
-            'password' => 'required|confirmed',
+            'name'      => 'required|string|max:255',
+            'email'     => 'required|email|unique:customers',
+            'password'  => 'required|confirmed',
         ]);
 
         if ($validator->fails()) {
@@ -36,18 +36,18 @@ class AuthController extends Controller
         }
 
         $customer = Customer::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'password'  => Hash::make($request->password)
         ]);
 
         $token = JWTAuth::fromUser($customer);
 
-        if($customer) {
+        if ($customer) {
             return response()->json([
-                'success' => true,
-                'user' => $customer,
-                'token' => $token
+                'success'   => true,
+                'user'      => $customer,
+                'token'     => $token
             ], 201);
         }
         return response()->json([
@@ -64,8 +64,8 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
-            'password' => 'required',
+            'email'     => 'required|email',
+            'password'  => 'required',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
@@ -73,16 +73,16 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        if(!$token = auth()->guard('api')->attempt($credentials)) {
+        if (!$token = auth()->guard('api')->attempt($credentials)) {
             return response()->json([
-            'success' => false,
-            'message' => 'Email or Password is incorrect'
+                'success' => false,
+                'message' => 'Email or Password is incorrect'
             ], 401);
         }
         return response()->json([
-            'success' => true,
-            'user' => auth()->guard('api')->user(),
-            'token' => $token
+            'success'   => true,
+            'user'      => auth()->guard('api')->user(),
+            'token'     => $token
         ], 201);
     }
 
@@ -94,9 +94,8 @@ class AuthController extends Controller
     public function getUser()
     {
         return response()->json([
-            'success' => true,
-            'user' => auth()->user()
+            'success'   => true,
+            'user'      => auth()->user()
         ], 200);
     }
-
 }

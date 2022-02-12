@@ -30,9 +30,9 @@ class CartController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
         return response()->json([
-            'success' => true,
-            'message' => 'List Data Cart',
-            'cart' => $carts
+            'success'   => true,
+            'message'   => 'List Data Cart',
+            'cart'      => $carts
         ]);
     }
 
@@ -56,23 +56,23 @@ class CartController extends Controller
             //sum weight
             $weight = $request->weight * $item->quantity;
             $item->update([
-                'price' => $price,
-                'weight'=> $weight
+                'price'     => $price,
+                'weight'    => $weight
             ]);
         } else {
             $item = Cart::create([
-                'product_id' => $request->product_id,
-                'customer_id' => $request->customer_id,
-                'quantity' => $request->quantity,
-                'price' => $request->price,
-                'weight' => $request->weight
+                'product_id'    => $request->product_id,
+                'customer_id'   => $request->customer_id,
+                'quantity'      => $request->quantity,
+                'price'         => $request->price,
+                'weight'        => $request->weight
             ]);
         }
         return response()->json([
-            'success' => true,
-            'message' => 'Success Add To Cart',
-            'quantity' => $item->quantity,
-            'product' => $item->product
+            'success'   => true,
+            'message'   => 'Success Add To Cart',
+            'quantity'  => $item->quantity,
+            'product'   => $item->product
         ]);
     }
 
@@ -89,9 +89,9 @@ class CartController extends Controller
             ->sum('price');
 
         return response()->json([
-            'success' => true,
-            'message' => 'Total Cart Price ',
-            'total' => $carts
+            'success'   => true,
+            'message'   => 'Total Cart Price ',
+            'total'     => $carts
         ]);
     }
 
@@ -108,9 +108,9 @@ class CartController extends Controller
             ->sum('weight');
 
         return response()->json([
-            'success' => true,
-            'message' => 'Total Cart Weight ',
-            'total' => $carts
+            'success'   => true,
+            'message'   => 'Total Cart Weight ',
+            'total'     => $carts
         ]);
     }
     /**
@@ -125,8 +125,8 @@ class CartController extends Controller
             ->whereId($request->cart_id)
             ->delete();
         return response()->json([
-            'success' => true,
-            'message' => 'Remove Item Cart',
+            'success'   => true,
+            'message'   => 'Remove Item Cart',
         ]);
     }
 
@@ -143,8 +143,8 @@ class CartController extends Controller
             ->delete();
 
         return response()->json([
-            'success' => true,
-            'message' => 'Remove All Item in Cart',
+            'success'   => true,
+            'message'   => 'Remove All Item in Cart',
         ]);
     }
 }

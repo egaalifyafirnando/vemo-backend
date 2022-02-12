@@ -17,6 +17,7 @@ class SliderController extends Controller
     public function index()
     {
         $sliders = Slider::latest()->paginate(10);
+
         return view('admin.slider.index', compact('sliders'));
     }
 
@@ -30,7 +31,7 @@ class SliderController extends Controller
     {
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2000',
-            'link' => 'required'
+            'link'  => 'required'
         ]);
 
         // upload image
@@ -40,13 +41,13 @@ class SliderController extends Controller
         // save to DB
         $slider = Slider::create([
             'image' => $image->hashName(),
-            'link' => $request->link
+            'link'  => $request->link
         ]);
 
         if ($slider) {
             // redirect dengan pesan sukses
             return redirect()->route('admin.slider.index')->with(['success' => 'Data Berhasil Disimpan!']);
-        }else{
+        } else {
             // redirect dengan pesan error
             return redirect()->route('admin.slider.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
@@ -68,7 +69,7 @@ class SliderController extends Controller
             return response()->json([
                 'status' => 'success'
             ]);
-        }else{
+        } else {
             return response()->json([
                 'status' => 'error'
             ]);

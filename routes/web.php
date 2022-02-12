@@ -25,10 +25,8 @@ Route::get('/', function () {
 
 //  group route with prefix "admin"
 Route::prefix('admin')->group(function () {
-
     // group route with middleware "auth"
     Route::group(['middleware' => 'auth'], function () {
-
         // route dashboard
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
 
